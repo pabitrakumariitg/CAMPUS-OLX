@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import bellicon from "../assets/notification.svg";
-import profileicon from "../assets/profile.svg";
+
 import "./Header.css";
 
 const Header = () => {
@@ -41,7 +41,7 @@ const Header = () => {
           <img src={bellicon} alt="Notifications" />
         </NavLink>
         <NavLink to="/profile" className="icon-link">
-          <img src={profileicon} alt="Profile" />
+          <img src="profile.jpg" alt="Profile" />
         </NavLink>
       </div>
     </div>
