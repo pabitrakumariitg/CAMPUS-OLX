@@ -1,0 +1,132 @@
+.sell {
+    height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Light gray background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+  }
+  
+  .sell-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .sell-top-left {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .sell-top-left label {
+    margin-bottom: 10px;
+    color: #333; /* Dark text color */
+  }
+  
+  .sell-top-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed #ccc;
+    padding: 20px;
+    background-color: #fff; /* White background */
+    border-radius: 5px; /* Rounded corners */
+    color: #666; /* Medium gray text color */
+  }
+  
+  .sell-price,
+  .sell-item-description,
+  .sell-item-upload {
+    margin-top: 20px;
+  }
+  
+  .sell-item-description {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .sell-item-description select {
+    display: block;
+    margin-top: 10px;
+    padding: 8px 12px; /* Padding for dropdowns */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px;
+    background-color: #fff; /* White background */
+    color: #333; /* Dark text color */
+  }
+  
+  .sell-item-description button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue button color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  .sell-item-description button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .sell-item-upload {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .sell-item-upload button {
+    padding: 10px 20px;
+    background-color: #28a745; /* Green button color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  .sell-item-upload button:last-child {
+    margin-left: 10px; /* Add margin between buttons */
+    background-color: #dc3545; /* Red button color */
+  }
+  
+  .sell-item-upload button:hover {
+    opacity: 0.8; /* Reduce opacity on hover */
+  }
+  
+  .input-title {
+    width: 25vw;
+    height: 5vh;
+    padding: 8px 12px; /* Padding for input */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px;
+    background-color: #fff; /* White background */
+    color: #333; /* Dark text color */
+  
+  }
+  
+  .input-desc {
+    height: 30vh;
+    /* padding: 8px 12px;  */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px;
+    background-color: #fff; /* White background */
+    color: #333; /* Dark text color */
+    text-align: start;
+  }
+  
+  .input-price {
+    width: 7vw;
+    height: 5vh;
+    padding: 8px 12px; /* Padding for input */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px;
+    background-color: #fff; /* White background */
+    color: #333; /* Dark text color */
+  }
+  
