@@ -16,7 +16,7 @@ const HomeItem = () => {
           </div>
           <div className='desc'><p>Lorem, ipsum dolor sit amet. Vitae repudiandae reiciendis culpa quasi? Aliquam tenetur quia dolore, numquam iste velit minima beatae tempora sit nihil optio, necessitatibus dolor quidem ratione.s fjdncksdnckwlncwkldjeiwdjiwjldskc fndjknksmdksmd jndksjdksadmka djwkjd</p></div>
         </div>
-        <div className='profile'>
+        <div className='profile_'>
           <img className='profilepic' src={profilePic} alt='Profile'></img>
           <h4 className='name'>Mansi</h4>
           <div className='chat'>
