@@ -14,7 +14,7 @@ const HomeItem = () => {
           <h3>My old Table</h3>
           <h2>$700</h2>
           </div>
-          <div className='desc'><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae repudiandae reiciendis culpa quasi? Aliquam tenetur quia dolore, numquam iste velit minima beatae tempora sit nihil optio, necessitatibus dolor quidem ratione.s fjdncksdnckwlncwkldjeiwdjiwjldskc fndjknksmdksmd jndksjdksadmka djwkjd</p></div>
+          <div className='desc'><p>Lorem, ipsum dolor sit amet. Vitae repudiandae reiciendis culpa quasi? Aliquam tenetur quia dolore, numquam iste velit minima beatae tempora sit nihil optio, necessitatibus dolor quidem ratione.s fjdncksdnckwlncwkldjeiwdjiwjldskc fndjknksmdksmd jndksjdksadmka djwkjd</p></div>
         </div>
         <div className='profile'>
           <img className='profilepic' src={profilePic} alt='Profile'></img>
