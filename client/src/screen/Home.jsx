@@ -237,6 +237,7 @@ const Home = () => {
     'Music Subscription',
     'Video Subscription',
     'Book Subscription',
+    'Table',
     'Magazine Subscription',
     'Fitness Subscription'
   ];

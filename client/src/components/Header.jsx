@@ -23,7 +23,7 @@ const Header = () => {
     <div className={`header ${scrolled ? "scrolled" : ""}`}>
       <h2>CampusOLX</h2>
       <nav className="nav-links">
-        <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>
+        <NavLink to="/home" className={({ isActive }) => (isActive ? "active" : "")}>
           Home
         </NavLink>
         <NavLink to="/sell" className={({ isActive }) => (isActive ? "active" : "")}>
