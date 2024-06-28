@@ -17,7 +17,7 @@ const SignIn = () => {
   const navigate = useNavigate();
   const [newUser, setNewUser] = useState({
     email: "",
-    userName: "",
+    username: "",
     password: "",
     confirmPassword: "",
   });
@@ -34,11 +34,11 @@ const SignIn = () => {
   };
 
   const handleValidation = () => {
-    const { password, confirmPassword, userName, email } = newUser;
+    const { password, confirmPassword, username, email } = newUser;
     if (password !== confirmPassword) {
       toast.error("Password and confirm password should be the same.", toastOptions);
       return false;
-    } else if (userName.length < 3) {
+    } else if (username.length < 3) {
       toast.error("Username should be greater than 3 characters.", toastOptions);
       return false;
     } else if (password.length < 8) {
@@ -66,6 +66,11 @@ const SignIn = () => {
       });
 
       if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem(
+          process.env.REACT_APP_LOCALHOST_KEY,
+          JSON.stringify(data.user)
+        );
         toast.success("Sign up successful!", toastOptions);
         navigate("/login");
       } else {
@@ -90,14 +95,16 @@ const SignIn = () => {
           value={newUser.email}
           onChange={handleChange}
           className="sign-up-input"
+          autoComplete="off"
         />
         <label>Username</label>
         <input
           type="text"
-          name="userName"
-          value={newUser.userName}
+          name="username"
+          value={newUser.username}
           onChange={handleChange}
           className="sign-up-input"
+          autoComplete="off"
         />
         <label>Set Password</label>
         <input
@@ -106,6 +113,7 @@ const SignIn = () => {
           value={newUser.password}
           onChange={handleChange}
           className="sign-up-input"
+          autoComplete="new-password"
         />
         <label>Confirm Password</label>
         <input
@@ -114,6 +122,7 @@ const SignIn = () => {
           value={newUser.confirmPassword}
           onChange={handleChange}
           className="sign-up-input"
+          autoComplete="new-password"
         />
         <button className="sign-up-button" onClick={handleSignUp}>
           Sign Up

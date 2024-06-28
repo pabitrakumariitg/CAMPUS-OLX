@@ -1,13 +1,22 @@
-import React, { useContext, useState } from "react";
-import "./Login.css";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./Login.css";
 
+// Add toast options
+const toastOptions = {
+  position: "bottom-right",
+  autoClose: 5000,
+  pauseOnHover: true,
+  draggable: true,
+  theme: "dark",
+};
 
 const Login = () => {
-  
   const navigate = useNavigate();
   const [user, setUser] = useState({
-    userName: "",
+    username: "",
     password: "",
   });
 
@@ -18,6 +27,13 @@ const Login = () => {
       [name]: value,
     }));
   };
+
+  // useEffect(() => {
+  //   const localStorageKey = process.env.REACT_APP_LOCALHOST_KEY;
+  //   if (localStorageKey && localStorage.getItem(localStorageKey)) {
+  //     navigate("/home");
+  //   }
+  // }, [navigate]);
 
   const handleLogin = async () => {
     try {
@@ -31,51 +47,35 @@ const Login = () => {
 
       if (response.ok) {
         const data = await response.json();
-        const username = data.userName;
-        setCurrentUsername(username);
-        localStorage.setItem("currentUsername", username);
-        alert("Login successful!");
-
-        try {
-          const profileResponse = await fetch(`http://localhost:8000/home/${username}`);
-          
-          if (profileResponse.ok) {
-            const profileData = await profileResponse.json();
-            console.log("Profile data:", profileData);
-            navigate(`/${username}/home`);
-          } else {
-            console.log("Profile not found, navigating to edit profile");
-            navigate(`/${username}/edit-profile`);
-          }
-        } catch (error) {
-          console.error("Error during profile check:", error);
-          alert("Profile check failed. Please try again later.");
-          navigate(`/${username}/edit-profile`);
-        }
+        localStorage.setItem(
+          process.env.REACT_APP_LOCALHOST_KEY,
+          JSON.stringify(data.user)
+        );
+        toast.success("Login successful!", toastOptions);
+        navigate("/home");
       } else {
         const data = await response.json();
-        alert(data.msg);
+        toast.error(data.msg, toastOptions);
       }
     } catch (error) {
       console.error("Error during login:", error);
-      alert("Login failed. Please try again later.");
+      toast.error("Login failed. Please try again later.", toastOptions);
     }
   };
 
   const handleSignup = () => {
-    navigate("/");
+    navigate("/signup");
   };
 
   return (
     <div className="login">
-     
       <div className="login-container">
         <h2>Login</h2>
         <label>Username</label>
         <input
           type="text"
-          name="userName"
-          value={user.userName}
+          name="username"
+          value={user.username}
           onChange={handleChange}
           className="login-input"
         />
@@ -97,6 +97,7 @@ const Login = () => {
           </button>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

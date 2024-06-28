@@ -33,6 +33,7 @@ module.exports.handleSignUp = async (req, res, next) => {
       username,
       password: hashedPassword,
     });
+    console.log(user);
     const userWithoutPassword = user.toObject();
     delete userWithoutPassword.password;
     return res.status(201).json({ status: true, user: userWithoutPassword });
