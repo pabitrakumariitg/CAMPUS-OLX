@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 async function connectMongoDb(url) {
     return mongoose.connect(url, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
+        // useNewUrlParser: true,
+        // useUnifiedTopology: true,
     });
 }
 

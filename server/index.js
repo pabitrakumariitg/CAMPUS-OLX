@@ -1,15 +1,16 @@
 const express = require("express");
 const cors = require("cors");
-const { connectMongoDb } = require("./connect"); // Corrected the import statement
+const { connectMongoDb } = require("./connect");
 
 // Import routers
 const SignUpRouter = require("./routes/user");
+const UploadItemRouter = require("./routes/UploadItem");
 
 const app = express();
 const PORT = 8000;
 
 // MongoDB connection setup
-const mongoURI = "mongodb://localhost:27017/campus-olx";
+const mongoURI = "mongodb://127.0.0.1:27017/campus-olx";
 connectMongoDb(mongoURI)
   .then(() => {
     console.log("MongoDB connected");
@@ -25,6 +26,8 @@ app.use(cors());
 
 // Routes
 app.use("/signUp", SignUpRouter);
+app.use("/sell", UploadItemRouter);
+app.use("/donate", UploadItemRouter);
 
 // Start the server
 app.listen(PORT, () => {
