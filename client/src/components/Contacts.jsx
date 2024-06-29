@@ -23,7 +23,7 @@ const Contacts = ({contacts,currentUser,changeChat}) => {
       <div className="container-cont">
             <div className="brand">
                 <img src={''} alt="logo" />
-                <h3>Chat-box</h3>
+                <h3>Your Contacts</h3>
             </div>
             <div className="users_">
                 <div className="contacts">

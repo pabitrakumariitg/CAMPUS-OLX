@@ -8,12 +8,12 @@
 
 .container-cont {
     padding: 2%;
-    background-color: #ece9e9b2;
+   
     display: flex;
     flex-direction: column;
   
     overflow: hidden;
-    background-color: #d2e6c6;
+    background-color: #dceceeb7;
 }
 
 .brand {
@@ -22,7 +22,7 @@
     gap: 1rem;
     justify-content: center;
     height: 10%;
-    background-color: #a8a8a9;
+    background-color: hsl(240, 41%, 47%);
 }
 
 .brand img {
@@ -36,7 +36,7 @@
 
 .users_ {
     height: 75%;
-   border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -68,7 +68,7 @@
 }
 
 .contact {
-    background-color: #ff444434;
+    background-color: #52ddf634;
     min-height: 5rem;
     cursor: pointer;
     width: 100%;
@@ -86,17 +86,18 @@
 }
 
 .contact .username h3 {
-    color: white;
+    color: rgb(6, 5, 5);
 }
 
 .contact.selected {
-    background-color: #9a86f3;
+    background-color: #aa99f8;
 }
 
 .current-user {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     width: 100%;
     height: 15%;
-    background-color: #a8a8a9;
+    background-color: #263f61;
     display: flex;
     justify-content: center;
     align-items: center;
