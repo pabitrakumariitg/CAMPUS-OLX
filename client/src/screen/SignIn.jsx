@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./SignUp.css";
 import { ToastContainer, toast } from "react-toastify";
@@ -32,12 +32,7 @@ const SignIn = () => {
       [e.target.name]: e.target.value,
     });
   };
-  
-  // useEffect(() => {
-  //   if (localStorage.getItem('chat-app-user')) {
-  //     navigate("/home");
-  //   }
-  // }, []);
+
   const handleValidation = () => {
     const { password, confirmPassword, username, email } = newUser;
     if (password !== confirmPassword) {
@@ -89,8 +84,8 @@ const SignIn = () => {
   };
 
   return (
-    <div className="sign-up">
-      <div className="sign-up-container">
+    <div className="sign-up0">
+      <div className="sign-up-container0">
         <h2>Sign Up</h2>
         
         <label>Email</label>
@@ -99,7 +94,7 @@ const SignIn = () => {
           name="email"
           value={newUser.email}
           onChange={handleChange}
-          className="sign-up-input"
+          className="sign-up-input0"
          
         />
         <label>Username</label>
@@ -108,7 +103,7 @@ const SignIn = () => {
           name="username"
           value={newUser.username}
           onChange={handleChange}
-          className="sign-up-input"
+          className="sign-up-input0"
           autoComplete="off"
         />
         <label>Set Password</label>
@@ -117,7 +112,7 @@ const SignIn = () => {
           name="password"
           value={newUser.password}
           onChange={handleChange}
-          className="sign-up-input"
+          className="sign-up-input0"
           autoComplete="new-password"
         />
         <label>Confirm Password</label>
@@ -126,16 +121,16 @@ const SignIn = () => {
           name="confirmPassword"
           value={newUser.confirmPassword}
           onChange={handleChange}
-          className="sign-up-input"
+          className="sign-up-input0"
           autoComplete="new-password"
         />
-        <button className="sign-up-button" onClick={handleSignUp}>
+        <button className="sign-up-button0" onClick={handleSignUp}>
           Sign Up
         </button>
       </div>
-      <div className="existing-account">
-        Already have an account?{" "}
-        <button className="login-button" onClick={handleLoginClick}>
+      <div className="existing-account0">
+        Already have an account?
+        <button className="login-button0" onClick={handleLoginClick}>
           Login Here
         </button>
       </div>
