@@ -1,8 +1,9 @@
 const express = require("express");
 const cors = require("cors");
 const { connectMongoDb } = require("./connect");
-
+require("dotenv").config();
 // Import routers
+const ChatRouter=require("./routes/chat")
 const SignUpRouter = require("./routes/user");
 const UploadItemRouter = require("./routes/UploadItem");
 
@@ -28,6 +29,7 @@ app.use(cors());
 app.use("/signUp", SignUpRouter);
 app.use("/sell", UploadItemRouter);
 app.use("/donate", UploadItemRouter);
+app.use("/chat", ChatRouter);
 
 // Start the server
 app.listen(PORT, () => {

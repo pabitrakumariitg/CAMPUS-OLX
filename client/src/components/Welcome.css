@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.welcome {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #ece9e9b2; /* Ensure the background color matches the container */
+}
+
+.welcome-content {
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ece9e9b2; ; /* Adjust background color if necessary */
+
+    padding: 2rem;
+    border-radius: 10px;
+   
+}
+
+.welcome img {
+    height: 15rem;
+}
+
+.welcome h1,
+.welcome h3 {
+    color: #333;
+}
+
+.welcome span {
+    color: #4e0eff;
+}

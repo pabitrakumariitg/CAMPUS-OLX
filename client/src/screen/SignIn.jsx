@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./SignUp.css";
 import { ToastContainer, toast } from "react-toastify";
@@ -32,7 +32,12 @@ const SignIn = () => {
       [e.target.name]: e.target.value,
     });
   };
-
+  
+  // useEffect(() => {
+  //   if (localStorage.getItem('chat-app-user')) {
+  //     navigate("/home");
+  //   }
+  // }, []);
   const handleValidation = () => {
     const { password, confirmPassword, username, email } = newUser;
     if (password !== confirmPassword) {
@@ -68,7 +73,7 @@ const SignIn = () => {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem(
-          process.env.REACT_APP_LOCALHOST_KEY,
+          "chat-app-user",
           JSON.stringify(data.user)
         );
         toast.success("Sign up successful!", toastOptions);
@@ -95,7 +100,7 @@ const SignIn = () => {
           value={newUser.email}
           onChange={handleChange}
           className="sign-up-input"
-          autoComplete="off"
+         
         />
         <label>Username</label>
         <input

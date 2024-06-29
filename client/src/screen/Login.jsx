@@ -4,7 +4,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Login.css";
 
-// Add toast options
 const toastOptions = {
   position: "bottom-right",
   autoClose: 5000,
@@ -28,16 +27,17 @@ const Login = () => {
     }));
   };
 
+  
   // useEffect(() => {
-  //   const localStorageKey = process.env.REACT_APP_LOCALHOST_KEY;
-  //   if (localStorageKey && localStorage.getItem(localStorageKey)) {
+  //   if (localStorage.getItem('chat-app-user')) {
   //     navigate("/home");
   //   }
-  // }, [navigate]);
+  // }, []);
+
 
   const handleLogin = async () => {
     try {
-      const response = await fetch("http://localhost:8000/login", {
+      const response = await fetch("http://localhost:8000/signUp/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -47,12 +47,15 @@ const Login = () => {
 
       if (response.ok) {
         const data = await response.json();
-        localStorage.setItem(
-          process.env.REACT_APP_LOCALHOST_KEY,
+        if(!data.status){
+          toast.error(data.msg, toastOptions);
+        }
+        else{
+        localStorage.setItem("chat-app-user",
           JSON.stringify(data.user)
         );
         toast.success("Login successful!", toastOptions);
-        navigate("/home");
+        navigate("/home");}
       } else {
         const data = await response.json();
         toast.error(data.msg, toastOptions);

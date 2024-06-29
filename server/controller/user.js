@@ -4,11 +4,14 @@ module.exports.handlelogin = async (req, res, next) => {
   try {
     const { username, password } = req.body;
     const user = await User.findOne({ username });
+    console.log(user);
     if (!user)
       return res.json({ msg: "Incorrect Username or Password", status: false });
     const isPasswordValid = await bcrypt.compare(password, user.password);
+
     if (!isPasswordValid)
       return res.json({ msg: "Incorrect Username or Password", status: false });
+    
     delete user.password;
     return res.json({ status: true, user });
   } catch (ex) {
@@ -33,7 +36,7 @@ module.exports.handleSignUp = async (req, res, next) => {
       username,
       password: hashedPassword,
     });
-    console.log(user);
+   
     const userWithoutPassword = user.toObject();
     delete userWithoutPassword.password;
     return res.status(201).json({ status: true, user: userWithoutPassword });
