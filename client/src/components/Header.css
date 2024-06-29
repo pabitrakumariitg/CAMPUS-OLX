@@ -1,18 +1,17 @@
-/* Header.css */
-
 .header {
   width: 100%;
   font-size: 21px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 5vw;
   padding: 5px 20px;
-
   background-color: #ffffff;
   transition: background-color 0.3s, box-shadow 0.3s;
-
+  position: fixed; /* Make the header fixed */
+  top: 0; /* Position at the top */
+  left: 0; /* Position at the left */
+  z-index: 1000; /* Ensure the header is in front */
 }
 
 .header.scrolled {
