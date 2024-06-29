@@ -7,6 +7,7 @@ import Donate from "./screen/Donate";
 import Home from "./screen/Home";
 import Login from "./screen/Login";
 import SignIn from "./screen/SignIn";
+import Chat from "./screen/Chat";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/sell" element={<Sell />} />
           <Route path="/donate" element={<Donate />} />
+          <Route path="/my-chats" element={<Chat />} />
           <Route path="/home" element={<Home />} />
         </Routes>
       </div>
