@@ -10,19 +10,26 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: Arial, sans-serif; 
 }
+
 .home {
-  width:  98vw;
+  width: 98vw;
+  height: 100vh; 
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   background-color: #fefbfb;
   padding: 10px;
+
+}
+
+.header {
+margin-top: 10vh;
 }
 
 .searchbox {
-  height: 10%;
   width: 90%;
   display: flex;
   align-items: center;
@@ -32,7 +39,8 @@ body, html {
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: relative; /* Add this to contain the dropdown */
+  position: relative; /* Ensure the dropdown is contained within the searchbox */
+  margin-bottom: 20px;
 }
 
 .searchbox input {
@@ -78,9 +86,9 @@ button:hover {
 
 .dropdown {
   position: absolute;
-  top: 50px; /* Adjust the position of the dropdown relative to the input field */
-  left: 0;
-  width: 100%;
+  top: 50px; /* Position dropdown below the input field */
+  left: 1;
+  width: 59%;
   max-height: 200px;
   overflow-y: auto;
   background-color: #fff;
@@ -100,7 +108,8 @@ button:hover {
 }
 
 .list {
+  width: 90%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 5px 20px; /* Adjust the gap between items as needed */
+  gap: 20px; /* Adjust the gap between items as needed */
 }
